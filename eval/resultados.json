@@ -1,0 +1,1040 @@
+{
+  "por_tarefa": [
+    {
+      "id": "cupom",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 4.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 1.0
+        },
+        "criterios_nao_cobertos": [],
+        "execucoes": [
+          {
+            "id": "cupom",
+            "repeticao": 1,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "cupom",
+            "repeticao": 2,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "cupom",
+            "repeticao": 3,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 1.0
+        },
+        "criterios_nao_cobertos": [],
+        "execucoes": [
+          {
+            "id": "cupom",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "cupom",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "cupom",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "comparavel": true
+    },
+    {
+      "id": "login",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 3.6666666666666665,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 1.0
+        },
+        "criterios_nao_cobertos": [],
+        "execucoes": [
+          {
+            "id": "login",
+            "repeticao": 1,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "login",
+            "repeticao": 2,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "login",
+            "repeticao": 3,
+            "qtd_casos": 3,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 1.0
+        },
+        "criterios_nao_cobertos": [],
+        "execucoes": [
+          {
+            "id": "login",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "login",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "login",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "comparavel": true
+    },
+    {
+      "id": "transferencia-bancaria",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.75
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "uma transferência rejeitada não debita o saldo",
+            "repeticoes": [
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "transferencia-bancaria",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "uma transferência rejeitada não debita o saldo"
+            ]
+          },
+          {
+            "id": "transferencia-bancaria",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "uma transferência rejeitada não debita o saldo"
+            ]
+          },
+          {
+            "id": "transferencia-bancaria",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "uma transferência rejeitada não debita o saldo"
+            ]
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 6.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.9166666666666666
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "uma transferência rejeitada não debita o saldo",
+            "repeticoes": [
+              2
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "transferencia-bancaria",
+            "repeticao": 1,
+            "qtd_casos": 6,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "transferencia-bancaria",
+            "repeticao": 2,
+            "qtd_casos": 6,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "uma transferência rejeitada não debita o saldo"
+            ]
+          },
+          {
+            "id": "transferencia-bancaria",
+            "repeticao": 3,
+            "qtd_casos": 6,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "comparavel": true
+    },
+    {
+      "id": "cadastro",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 4.666666666666667,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.5
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "não é permitido cadastrar um e-mail já utilizado",
+            "repeticoes": [
+              3
+            ]
+          },
+          {
+            "descricao": "a confirmação deve ser igual à senha",
+            "repeticoes": [
+              1,
+              2
+            ]
+          },
+          {
+            "descricao": "o formulário deve ser simples e intuitivo",
+            "repeticoes": [
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "cadastro",
+            "repeticao": 1,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.5,
+            "criterios_nao_cobertos": [
+              "a confirmação deve ser igual à senha",
+              "o formulário deve ser simples e intuitivo"
+            ]
+          },
+          {
+            "id": "cadastro",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.5,
+            "criterios_nao_cobertos": [
+              "a confirmação deve ser igual à senha",
+              "o formulário deve ser simples e intuitivo"
+            ]
+          },
+          {
+            "id": "cadastro",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.5,
+            "criterios_nao_cobertos": [
+              "não é permitido cadastrar um e-mail já utilizado",
+              "o formulário deve ser simples e intuitivo"
+            ]
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.5
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "não é permitido cadastrar um e-mail já utilizado",
+            "repeticoes": [
+              2,
+              3
+            ]
+          },
+          {
+            "descricao": "a confirmação deve ser igual à senha",
+            "repeticoes": [
+              1,
+              3
+            ]
+          },
+          {
+            "descricao": "o formulário deve ser simples e intuitivo",
+            "repeticoes": [
+              1,
+              3
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "cadastro",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.5,
+            "criterios_nao_cobertos": [
+              "a confirmação deve ser igual à senha",
+              "o formulário deve ser simples e intuitivo"
+            ]
+          },
+          {
+            "id": "cadastro",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "não é permitido cadastrar um e-mail já utilizado"
+            ]
+          },
+          {
+            "id": "cadastro",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.25,
+            "criterios_nao_cobertos": [
+              "não é permitido cadastrar um e-mail já utilizado",
+              "a confirmação deve ser igual à senha",
+              "o formulário deve ser simples e intuitivo"
+            ]
+          }
+        ]
+      },
+      "comparavel": true
+    },
+    {
+      "id": "busca-produtos",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 1.0
+        },
+        "criterios_nao_cobertos": [],
+        "execucoes": [
+          {
+            "id": "busca-produtos",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "busca-produtos",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "busca-produtos",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 6.666666666666667,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 1.0
+        },
+        "criterios_nao_cobertos": [],
+        "execucoes": [
+          {
+            "id": "busca-produtos",
+            "repeticao": 1,
+            "qtd_casos": 7,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "busca-produtos",
+            "repeticao": 2,
+            "qtd_casos": 6,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "busca-produtos",
+            "repeticao": 3,
+            "qtd_casos": 7,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "comparavel": true
+    },
+    {
+      "id": "upload-arquivo",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 4.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.75
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "uma falha no envio informa o erro sem perder o arquivo selecionado",
+            "repeticoes": [
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "upload-arquivo",
+            "repeticao": 1,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "uma falha no envio informa o erro sem perder o arquivo selecionado"
+            ]
+          },
+          {
+            "id": "upload-arquivo",
+            "repeticao": 2,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "uma falha no envio informa o erro sem perder o arquivo selecionado"
+            ]
+          },
+          {
+            "id": "upload-arquivo",
+            "repeticao": 3,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "uma falha no envio informa o erro sem perder o arquivo selecionado"
+            ]
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.8333333333333334
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "o usuário recebe confirmação após o envio concluído",
+            "repeticoes": [
+              1,
+              2
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "upload-arquivo",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "o usuário recebe confirmação após o envio concluído"
+            ]
+          },
+          {
+            "id": "upload-arquivo",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "o usuário recebe confirmação após o envio concluído"
+            ]
+          },
+          {
+            "id": "upload-arquivo",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "comparavel": true
+    },
+    {
+      "id": "recuperacao-senha",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 4.666666666666667,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.75
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "o sistema deve detectar tentativas suspeitas",
+            "repeticoes": [
+              2,
+              3
+            ]
+          },
+          {
+            "descricao": "a solicitação deve ser processada rapidamente",
+            "repeticoes": [
+              3
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "recuperacao-senha",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "recuperacao-senha",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "o sistema deve detectar tentativas suspeitas"
+            ]
+          },
+          {
+            "id": "recuperacao-senha",
+            "repeticao": 3,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.5,
+            "criterios_nao_cobertos": [
+              "o sistema deve detectar tentativas suspeitas",
+              "a solicitação deve ser processada rapidamente"
+            ]
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.333333333333333,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.8333333333333334
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "o sistema deve detectar tentativas suspeitas",
+            "repeticoes": [
+              1,
+              2
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "recuperacao-senha",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "o sistema deve detectar tentativas suspeitas"
+            ]
+          },
+          {
+            "id": "recuperacao-senha",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "o sistema deve detectar tentativas suspeitas"
+            ]
+          },
+          {
+            "id": "recuperacao-senha",
+            "repeticao": 3,
+            "qtd_casos": 6,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "comparavel": true
+    },
+    {
+      "id": "reserva-horario",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 1.0
+        },
+        "criterios_nao_cobertos": [],
+        "execucoes": [
+          {
+            "id": "reserva-horario",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "reserva-horario",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "reserva-horario",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.666666666666667,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.9166666666666666
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "não é possível reservar um horário já ocupado",
+            "repeticoes": [
+              1
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "reserva-horario",
+            "repeticao": 1,
+            "qtd_casos": 6,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.75,
+            "criterios_nao_cobertos": [
+              "não é possível reservar um horário já ocupado"
+            ]
+          },
+          {
+            "id": "reserva-horario",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "reserva-horario",
+            "repeticao": 3,
+            "qtd_casos": 6,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "comparavel": true
+    },
+    {
+      "id": "notificacoes",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 3.6666666666666665,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.6666666666666666
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "a preferência deve continuar salva após sair e entrar novamente",
+            "repeticoes": [
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "notificacoes",
+            "repeticao": 1,
+            "qtd_casos": 3,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.6666666666666666,
+            "criterios_nao_cobertos": [
+              "a preferência deve continuar salva após sair e entrar novamente"
+            ]
+          },
+          {
+            "id": "notificacoes",
+            "repeticao": 2,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.6666666666666666,
+            "criterios_nao_cobertos": [
+              "a preferência deve continuar salva após sair e entrar novamente"
+            ]
+          },
+          {
+            "id": "notificacoes",
+            "repeticao": 3,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.6666666666666666,
+            "criterios_nao_cobertos": [
+              "a preferência deve continuar salva após sair e entrar novamente"
+            ]
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 0.6666666666666666
+        },
+        "criterios_nao_cobertos": [
+          {
+            "descricao": "a preferência deve continuar salva após sair e entrar novamente",
+            "repeticoes": [
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "execucoes": [
+          {
+            "id": "notificacoes",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.6666666666666666,
+            "criterios_nao_cobertos": [
+              "a preferência deve continuar salva após sair e entrar novamente"
+            ]
+          },
+          {
+            "id": "notificacoes",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.6666666666666666,
+            "criterios_nao_cobertos": [
+              "a preferência deve continuar salva após sair e entrar novamente"
+            ]
+          },
+          {
+            "id": "notificacoes",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 0.6666666666666666,
+            "criterios_nao_cobertos": [
+              "a preferência deve continuar salva após sair e entrar novamente"
+            ]
+          }
+        ]
+      },
+      "comparavel": true
+    },
+    {
+      "id": "exportacao-relatorio",
+      "system_basico": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 3.6666666666666665,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 1.0
+        },
+        "criterios_nao_cobertos": [],
+        "execucoes": [
+          {
+            "id": "exportacao-relatorio",
+            "repeticao": 1,
+            "qtd_casos": 3,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "exportacao-relatorio",
+            "repeticao": 2,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "exportacao-relatorio",
+            "repeticao": 3,
+            "qtd_casos": 4,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "system": {
+        "sucesso": true,
+        "execucoes_sucesso": 3,
+        "media": {
+          "qtd_casos": 5.0,
+          "formato_ok": 1.0,
+          "tem_negativo": 1.0,
+          "cobertura": 1.0
+        },
+        "criterios_nao_cobertos": [],
+        "execucoes": [
+          {
+            "id": "exportacao-relatorio",
+            "repeticao": 1,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "exportacao-relatorio",
+            "repeticao": 2,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          },
+          {
+            "id": "exportacao-relatorio",
+            "repeticao": 3,
+            "qtd_casos": 5,
+            "formato_ok": true,
+            "tem_negativo": true,
+            "cobertura": 1.0,
+            "criterios_nao_cobertos": []
+          }
+        ]
+      },
+      "comparavel": true
+    }
+  ],
+  "resumo": {
+    "tarefas_comparadas": 10,
+    "SYSTEM_BASICO": {
+      "formato_valido": 1.0,
+      "com_cenario_negativo": 1.0,
+      "cobertura_media": 0.8416666666666666
+    },
+    "SYSTEM": {
+      "formato_valido": 1.0,
+      "com_cenario_negativo": 1.0,
+      "cobertura_media": 0.8666666666666666
+    }
+  }
+}

@@ -12,16 +12,19 @@ Gere casos de teste cobrindo cenários positivos, negativos e de borda.
 Responda SOMENTE com JSON válido neste formato:
 {"casos": [{"titulo": "...", "tipo": "positivo|negativo|borda", "criterio": "critério coberto", "gherkin": "Dado ...\\nQuando ...\\nEntão ..."}]}"""
 
+SYSTEM_BASICO = """Gere casos de teste em Gherkin para a tarefa recebida.
+Responda SOMENTE com JSON neste formato: {"casos": [{"titulo": "...", "tipo": "positivo|negativo|borda", "criterio": "...", "gherkin": "Dado ...\\nQuando ...\\nEntão ..."}]}"""
 
-def gerar_casos(tarefa: str) -> list[dict]:
+def gerar_casos(tarefa: str, system: str = SYSTEM) -> list[dict]:
     resp = client.models.generate_content(
         model=MODELO,
         contents=tarefa,
         config=types.GenerateContentConfig(
-            system_instruction=SYSTEM,
+            system_instruction=system,
             response_mime_type="application/json",
         ),
     )
     texto = resp.text.strip()
     texto = texto.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
     return json.loads(texto)["casos"]
+

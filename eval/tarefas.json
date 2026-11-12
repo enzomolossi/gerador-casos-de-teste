@@ -1,0 +1,100 @@
+[
+  {
+    "id": "cupom",
+    "tarefa": "Como cliente, quero aplicar um cupom de desconto no carrinho.",
+    "criterios": [
+      {"descricao": "cupom válido reduz o total", "palavras": ["válido", "valido"]},
+      {"descricao": "cupom expirado mostra erro", "palavras": ["expirad", "vencid"]},
+      {"descricao": "só um cupom por pedido", "palavras": ["um cupom", "segundo cupom", "dois cupons", "mais de um"]},
+      {"descricao": "desconto não deixa o total negativo", "palavras": ["negativ", "zero"]}
+    ]
+  },
+  {
+    "id": "login",
+    "tarefa": "Como usuário, quero fazer login no sistema.",
+    "criterios": [
+      {"descricao": "senha incorreta mostra erro", "palavras": ["senha incorreta", "senha errada", "senha inválida"]},
+      {"descricao": "conta bloqueada após 3 tentativas erradas", "palavras": ["3 tentativas", "três tentativas", "bloquead", "bloqueio"]},
+      {"descricao": "campos em branco não permitem enviar", "palavras": ["vazio", "em branco", "obrigatóri"]}
+    ]
+  },
+  {
+    "id": "transferencia-bancaria",
+    "tarefa": "Como cliente, quero transferir dinheiro entre contas pelo aplicativo bancário.",
+    "criterios": [
+      {"descricao": "transferência só é concluída quando há saldo suficiente", "palavras": ["saldo suficiente", "saldo insuficiente", "saldo disponível"]},
+      {"descricao": "o valor máximo por transferência é R$ 2.000", "palavras": ["2.000", "2000", "valor máximo por transferência"]},
+      {"descricao": "o limite diário de transferências é R$ 5.000", "palavras": ["5.000", "5000", "limite diário", "limite diario"]},
+      {"descricao": "uma transferência rejeitada não debita o saldo", "palavras": ["não debita", "não desconta", "saldo não é alterado"]}
+    ]
+  },
+  {
+    "id": "cadastro",
+    "tarefa": "Como visitante, quero criar uma conta para acessar a plataforma.",
+    "criterios": [
+      {"descricao": "não é permitido cadastrar um e-mail já utilizado", "palavras": ["e-mail já utilizado", "email já cadastrado", "e-mail existente"]},
+      {"descricao": "a senha deve ter pelo menos 12 caracteres", "palavras": ["12 caracteres", "doze caracteres", "mínimo de 12"]},
+      {"descricao": "a confirmação deve ser igual à senha", "palavras": ["senhas diferentes", "confirmação da senha", "senha e confirmação"]},
+      {"descricao": "o formulário deve ser simples e intuitivo", "palavras": ["simples", "intuitivo", "fácil de usar"]}
+    ]
+  },
+  {
+    "id": "busca-produtos",
+    "tarefa": "Como cliente, quero buscar produtos no catálogo da loja.",
+    "criterios": [
+      {"descricao": "resultados relevantes devem aparecer primeiro", "palavras": ["relevantes", "mais relevante", "relevância"]},
+      {"descricao": "a busca deve encontrar correspondências parciais no nome", "palavras": ["correspondência parcial", "parte do nome", "nome parcial"]},
+      {"descricao": "a busca não deve diferenciar maiúsculas de minúsculas", "palavras": ["maiúsculas", "minúsculas", "sem diferenciar maiúsculas"]},
+      {"descricao": "uma busca sem resultados deve apresentar uma mensagem", "palavras": ["nenhum resultado", "sem resultados", "não encontrou"]}
+    ]
+  },
+  {
+    "id": "upload-arquivo",
+    "tarefa": "Como usuário, quero enviar um arquivo PDF para anexá-lo ao meu perfil.",
+    "criterios": [
+      {"descricao": "somente arquivos PDF são aceitos", "palavras": ["pdf", "formato não permitido", "tipo de arquivo"]},
+      {"descricao": "o tamanho máximo do arquivo é 10 MB", "palavras": ["10 mb", "10mb", "tamanho máximo"]},
+      {"descricao": "o usuário recebe confirmação após o envio concluído", "palavras": ["envio concluído", "upload concluído", "arquivo enviado"]},
+      {"descricao": "uma falha no envio informa o erro sem perder o arquivo selecionado", "palavras": ["falha no envio", "erro no upload", "arquivo selecionado"]}
+    ]
+  },
+  {
+    "id": "recuperacao-senha",
+    "tarefa": "Como usuário, quero recuperar minha senha por e-mail.",
+    "criterios": [
+      {"descricao": "o link de recuperação expira após 15 minutos", "palavras": ["15 minutos", "quinze minutos", "link expirado"]},
+      {"descricao": "o link de recuperação só pode ser usado uma vez", "palavras": ["uma vez", "uso único", "já utilizado"]},
+      {"descricao": "o sistema deve detectar tentativas suspeitas", "palavras": ["tentativa suspeita", "atividade suspeita", "suspeito"]},
+      {"descricao": "a solicitação deve ser processada rapidamente", "palavras": ["rapidamente", "rápido", "sem demora"]}
+    ]
+  },
+  {
+    "id": "reserva-horario",
+    "tarefa": "Como cliente, quero reservar um horário para atendimento em uma unidade.",
+    "criterios": [
+      {"descricao": "não é possível reservar um horário já ocupado", "palavras": ["horário ocupado", "já reservado", "indisponível"]},
+      {"descricao": "a reserva deve enviar uma confirmação com data e horário", "palavras": ["confirmação", "data e horário", "reserva confirmada"]},
+      {"descricao": "o cliente pode cancelar até 24 horas antes", "palavras": ["24 horas", "vinte e quatro horas", "cancelar"]},
+      {"descricao": "o mesmo cliente não pode manter mais de 3 reservas futuras", "palavras": ["3 reservas", "três reservas", "reservas futuras"]}
+    ]
+  },
+  {
+    "id": "notificacoes",
+    "tarefa": "Como usuário, quero configurar quais notificações recebo da plataforma.",
+    "criterios": [
+      {"descricao": "o usuário pode ativar ou desativar notificações por e-mail", "palavras": ["notificações por e-mail", "notificação por email", "e-mail ativado"]},
+      {"descricao": "a preferência deve continuar salva após sair e entrar novamente", "palavras": ["preferência salva", "continua salva", "após entrar novamente"]},
+      {"descricao": "notificações obrigatórias de segurança não podem ser desativadas", "palavras": ["segurança", "não podem ser desativadas", "obrigatórias"]}
+    ]
+  },
+  {
+    "id": "exportacao-relatorio",
+    "tarefa": "Como gestor, quero exportar um relatório de vendas para análise.",
+    "criterios": [
+      {"descricao": "o relatório permite filtrar vendas por período", "palavras": ["período", "data inicial", "data final"]},
+      {"descricao": "o arquivo exportado deve estar disponível em CSV", "palavras": ["csv", "arquivo csv", "formato csv"]},
+      {"descricao": "o total do relatório deve corresponder aos filtros aplicados", "palavras": ["total", "filtros aplicados", "soma das vendas"]},
+      {"descricao": "a exportação deve concluir em até 30 segundos", "palavras": ["30 segundos", "trinta segundos", "tempo limite"]}
+    ]
+  }
+]
