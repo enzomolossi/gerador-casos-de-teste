@@ -12,6 +12,12 @@ Gere casos de teste cobrindo cenários positivos, negativos e de borda.
 Responda SOMENTE com JSON válido neste formato:
 {"casos": [{"titulo": "...", "tipo": "positivo|negativo|borda", "criterio": "critério coberto", "gherkin": "Dado ...\\nQuando ...\\nEntão ..."}]}"""
 
+SYSTEM_V2 = SYSTEM + """
+Regras adicionais:
+- Cada critério de aceite deve ter pelo menos um caso de teste.
+- No campo "criterio", copie o texto do critério coberto.
+- Inclua pelo menos um caso de borda para cada regra numérica ou limite."""
+
 SYSTEM_BASICO = """Gere casos de teste em Gherkin para a tarefa recebida.
 Responda SOMENTE com JSON neste formato: {"casos": [{"titulo": "...", "tipo": "positivo|negativo|borda", "criterio": "...", "gherkin": "Dado ...\\nQuando ...\\nEntão ..."}]}"""
 

@@ -4,49 +4,37 @@ import time
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from gerador import SYSTEM, SYSTEM_BASICO, gerar_casos
+from gerador import gerar_casos, SYSTEM, SYSTEM_BASICO, SYSTEM_V2
 
-PAUSA = 8  # segundos entre chamadas, por causa do limite do plano gratuito
-PAUSA_RETRY = 20
-MAX_RETRIES = 3
-CODIGOS_RETRY = {429, 503, 504}
-REPETICOES = 3
-
-
-def codigo_http(erro):
-    codigo = getattr(erro, "code", None)
-    if codigo is None:
-        codigo = getattr(erro, "status_code", None)
-    try:
-        return int(codigo)
-    except (TypeError, ValueError):
-        return None
+PROMPTS = {"basico": SYSTEM_BASICO, "atual": SYSTEM, "v2": SYSTEM_V2}
+RODADAS = 3        # quantas vezes roda cada tarefa por prompt
+PAUSA = 6          # segundos entre chamadas (limite do plano gratuito)
+TENTATIVAS = 3     # tentativas em caso de erro temporário
+ESPERA_ERRO = 20   # segundos de espera antes de tentar de novo
 
 
-def avaliar_tarefa(item, system, repeticao):
-    texto = item["tarefa"] + " Critérios: " + "; ".join(c["descricao"] for c in item["criterios"])
-    for tentativa in range(MAX_RETRIES + 1):
+def chamar(texto, system):
+    for t in range(TENTATIVAS):
         try:
-            casos = gerar_casos(texto, system=system)
-            break
-        except Exception as erro:
-            codigo = codigo_http(erro)
-            if codigo not in CODIGOS_RETRY or tentativa == MAX_RETRIES:
-                resultado = {"id": item["id"], "repeticao": repeticao, "erro": str(erro)}
-                if codigo is not None:
-                    resultado["codigo_http"] = codigo
-                return resultado
-            print(
-                f"HTTP {codigo} em {item['id']} ({repeticao}/{REPETICOES}); "
-                f"nova tentativa em {PAUSA_RETRY}s ({tentativa + 1}/{MAX_RETRIES})"
+            return gerar_casos(texto, system)
+        except Exception as e:
+            temporario = any(c in str(e) for c in ("503", "429", "504")) or isinstance(
+                e, (ValueError, KeyError)
             )
-            time.sleep(PAUSA_RETRY)
+            if temporario and t < TENTATIVAS - 1:
+                time.sleep(ESPERA_ERRO)
+                continue
+            raise
 
+
+def avaliar_rodada(item, system):
+    texto = item["tarefa"] + " Critérios: " + "; ".join(c["descricao"] for c in item["criterios"])
+    casos = chamar(texto, system)
     formato_ok = len(casos) > 0 and all(
         all(k in c for k in ("titulo", "tipo", "criterio", "gherkin"))
-        and any(p in c["gherkin"] for p in ("Então", "Entao"))
         and "Dado" in c["gherkin"]
         and "Quando" in c["gherkin"]
+        and ("Então" in c["gherkin"] or "Entao" in c["gherkin"])
         for c in casos
     )
     tem_negativo = any(c.get("tipo") == "negativo" for c in casos)
@@ -54,114 +42,75 @@ def avaliar_tarefa(item, system, repeticao):
         f'{c.get("titulo", "")} {c.get("criterio", "")} {c.get("gherkin", "")}'.lower()
         for c in casos
     )
-    criterios_nao_cobertos = [
-        criterio["descricao"]
-        for criterio in item["criterios"]
-        if not any(palavra.lower() in texto_casos for palavra in criterio["palavras"])
+    faltou = [
+        crit["descricao"]
+        for crit in item["criterios"]
+        if not any(p.lower() in texto_casos for p in crit["palavras"])
     ]
     return {
-        "id": item["id"],
-        "repeticao": repeticao,
         "qtd_casos": len(casos),
         "formato_ok": formato_ok,
         "tem_negativo": tem_negativo,
-        "cobertura": (len(item["criterios"]) - len(criterios_nao_cobertos)) / len(item["criterios"]),
-        "criterios_nao_cobertos": criterios_nao_cobertos,
+        "cobertura": 1 - len(faltou) / len(item["criterios"]),
+        "nao_cobertos": faltou,
     }
 
 
-def resumir_tarefa(item, execucoes):
-    sucesso = [execucao for execucao in execucoes if "erro" not in execucao]
-    completa = len(sucesso) == REPETICOES
-    media = None
-    if completa:
-        media = {
-            "qtd_casos": sum(execucao["qtd_casos"] for execucao in sucesso) / REPETICOES,
-            "formato_ok": sum(execucao["formato_ok"] for execucao in sucesso) / REPETICOES,
-            "tem_negativo": sum(execucao["tem_negativo"] for execucao in sucesso) / REPETICOES,
-            "cobertura": sum(execucao["cobertura"] for execucao in sucesso) / REPETICOES,
-        }
-
-    criterios_nao_cobertos = []
-    for criterio in item["criterios"]:
-        repeticoes = [
-            execucao["repeticao"]
-            for execucao in sucesso
-            if criterio["descricao"] in execucao["criterios_nao_cobertos"]
-        ]
-        if repeticoes:
-            criterios_nao_cobertos.append(
-                {"descricao": criterio["descricao"], "repeticoes": repeticoes}
-            )
-
-    return {
-        "sucesso": completa,
-        "execucoes_sucesso": len(sucesso),
-        "media": media,
-        "criterios_nao_cobertos": criterios_nao_cobertos,
-        "execucoes": execucoes,
-    }
-
-
-def resumir_comparacao(pares):
-    comparaveis = [par for par in pares if par["comparavel"]]
-    resumo = {"tarefas_comparadas": len(comparaveis)}
-    for nome in ("system_basico", "system"):
-        medias = [par[nome]["media"] for par in comparaveis]
-        resumo[nome.upper()] = {
-            "formato_valido": (
-                sum(media["formato_ok"] for media in medias) / len(medias) if medias else None
-            ),
-            "com_cenario_negativo": (
-                sum(media["tem_negativo"] for media in medias) / len(medias) if medias else None
-            ),
-            "cobertura_media": (
-                sum(media["cobertura"] for media in medias) / len(medias) if medias else None
-            ),
-        }
-    return resumo
+def media(valores):
+    return sum(valores) / len(valores) if valores else 0
 
 
 if __name__ == "__main__":
     tarefas = json.loads(Path(__file__).with_name("tarefas.json").read_text(encoding="utf-8"))
-    prompts = {"SYSTEM_BASICO": SYSTEM_BASICO, "SYSTEM": SYSTEM}
-    pares = []
-    total_chamadas = len(tarefas) * len(prompts) * REPETICOES
-    chamada_atual = 0
+    resultados = {}
 
     for item in tarefas:
-        par = {"id": item["id"]}
-        for nome, system in prompts.items():
-            execucoes = []
-            for repeticao in range(1, REPETICOES + 1):
-                resultado = avaliar_tarefa(item, system, repeticao)
-                print(f"{nome} | {resultado}")
-                execucoes.append(resultado)
-                chamada_atual += 1
-                if chamada_atual < total_chamadas:
-                    time.sleep(PAUSA)
-            par[nome.lower()] = resumir_tarefa(item, execucoes)
-        par["comparavel"] = par["system_basico"]["sucesso"] and par["system"]["sucesso"]
-        pares.append(par)
+        resultados[item["id"]] = {}
+        for nome, system in PROMPTS.items():
+            rodadas, erros = [], 0
+            for _ in range(RODADAS):
+                try:
+                    rodadas.append(avaliar_rodada(item, system))
+                except Exception as e:
+                    erros += 1
+                    print(f"  erro ({item['id']}, {nome}): {str(e)[:80]}")
+                time.sleep(PAUSA)
+            resultados[item["id"]][nome] = {"rodadas": rodadas, "erros": erros}
+            if rodadas:
+                cob = media([r["cobertura"] for r in rodadas])
+                print(f"{item['id']:28} {nome:7} cobertura {cob:.0%} ({len(rodadas)}/{RODADAS} rodadas ok)")
 
-    resumo = resumir_comparacao(pares)
+    # Comparação justa: só tarefas em que TODOS os prompts tiveram pelo menos 1 rodada ok
+    ids_validos = [
+        i for i, por_prompt in resultados.items()
+        if all(por_prompt[p]["rodadas"] for p in PROMPTS)
+    ]
+    print(f"\n=== COMPARAÇÃO ({len(ids_validos)}/{len(tarefas)} tarefas válidas em todos os prompts) ===")
+    print(f"{'Métrica':26}" + "".join(f"{p:>10}" for p in PROMPTS))
 
-    print("\n=== COMPARAÇÃO DOS PROMPTS ===")
-    print(f"{'Métrica':<30}{'SYSTEM_BASICO':>18}{'SYSTEM':>18}")
-    print(f"{'Tarefas comparáveis':<30}{resumo['tarefas_comparadas']:>18}{resumo['tarefas_comparadas']:>18}")
-    for chave, rotulo in (
-        ("formato_valido", "Formato válido"),
-        ("com_cenario_negativo", "Com cenário negativo"),
-        ("cobertura_media", "Cobertura média"),
-    ):
-        valores = [resumo[nome][chave] for nome in ("SYSTEM_BASICO", "SYSTEM")]
-        textos = [f"{valor:.0%}" if valor is not None else "N/D" for valor in valores]
-        print(
-            f"{rotulo:<30}"
-            f"{textos[0]:>18}{textos[1]:>18}"
-        )
+    def linha(titulo, campo):
+        valores = []
+        for p in PROMPTS:
+            por_tarefa = [
+                media([float(r[campo]) for r in resultados[i][p]["rodadas"]]) for i in ids_validos
+            ]
+            valores.append(media(por_tarefa))
+        print(f"{titulo:26}" + "".join(f"{v:>10.0%}" for v in valores))
+
+    linha("Formato válido", "formato_ok")
+    linha("Com cenário negativo", "tem_negativo")
+    linha("Cobertura média", "cobertura")
+
+    print("\n=== CRITÉRIOS NÃO COBERTOS (quantas rodadas falharam) ===")
+    for i in ids_validos:
+        for p in PROMPTS:
+            contagem = {}
+            for r in resultados[i][p]["rodadas"]:
+                for d in r["nao_cobertos"]:
+                    contagem[d] = contagem.get(d, 0) + 1
+            for d, n in contagem.items():
+                print(f"{i} | {p} | {d} ({n}/{len(resultados[i][p]['rodadas'])} rodadas)")
 
     Path(__file__).with_name("resultados.json").write_text(
-        json.dumps({"por_tarefa": pares, "resumo": resumo}, ensure_ascii=False, indent=2),
-        encoding="utf-8",
+        json.dumps(resultados, ensure_ascii=False, indent=2), encoding="utf-8"
     )
