@@ -1,8 +1,12 @@
-# gerador-casos-de-teste
-Projeto IA builder para uso de Q/A
 # Gerador de Casos de Teste com IA
+Projeto IA builder para uso de Q/A
+
+## Demonstração
+
+https://github.com/user-attachments/assets/252a20a6-1617-4af8-a137-0781e1c73c55
 
 App que recebe a descrição de uma tarefa com critérios de aceite e gera casos de teste em Gherkin (cenários positivos, negativos e de borda). Feito por um profissional de QA para acelerar a criação de casos e **medir** a qualidade do que a IA gera.
+
 
 ## Como funciona
 - Interface em Streamlit; a chamada à IA fica isolada em `gerador.py` (trocar de provedor é simples).
