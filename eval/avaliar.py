@@ -38,20 +38,22 @@ def avaliar_rodada(item, system):
         for c in casos
     )
     tem_negativo = any(c.get("tipo") == "negativo" for c in casos)
+    # Só título e Gherkin: o campo "criterio" repete o texto do critério (principalmente no v2)
+    # e inflaria a cobertura.
     texto_casos = " ".join(
-        f'{c.get("titulo", "")} {c.get("criterio", "")} {c.get("gherkin", "")}'.lower()
-        for c in casos
+        f'{c.get("titulo", "")} {c.get("gherkin", "")}'.lower() for c in casos
     )
+    medidos = [c for c in item["criterios"] if c.get("testavel", True)]
     faltou = [
         crit["descricao"]
-        for crit in item["criterios"]
+        for crit in medidos
         if not any(p.lower() in texto_casos for p in crit["palavras"])
     ]
     return {
         "qtd_casos": len(casos),
         "formato_ok": formato_ok,
         "tem_negativo": tem_negativo,
-        "cobertura": 1 - len(faltou) / len(item["criterios"]),
+        "cobertura": 1 - len(faltou) / len(medidos),
         "nao_cobertos": faltou,
     }
 

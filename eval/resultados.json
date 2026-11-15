@@ -13,15 +13,19 @@
           "qtd_casos": 4,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "desconto não deixa o total negativo"
+          ]
         },
         {
           "qtd_casos": 4,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "desconto não deixa o total negativo"
+          ]
         }
       ],
       "erros": 0
@@ -32,8 +36,10 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "desconto não deixa o total negativo"
+          ]
         },
         {
           "qtd_casos": 5,
@@ -65,15 +71,19 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "desconto não deixa o total negativo"
+          ]
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "desconto não deixa o total negativo"
+          ]
         }
       ],
       "erros": 0
@@ -172,7 +182,7 @@
           ]
         },
         {
-          "qtd_casos": 5,
+          "qtd_casos": 4,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 0.75,
@@ -216,8 +226,10 @@
           "qtd_casos": 6,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "uma transferência rejeitada não debita o saldo"
+          ]
         }
       ],
       "erros": 0
@@ -228,22 +240,28 @@
           "qtd_casos": 7,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "uma transferência rejeitada não debita o saldo"
+          ]
         },
         {
           "qtd_casos": 7,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "uma transferência rejeitada não debita o saldo"
+          ]
         },
         {
           "qtd_casos": 7,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "uma transferência rejeitada não debita o saldo"
+          ]
         }
       ],
       "erros": 0
@@ -253,35 +271,25 @@
     "basico": {
       "rodadas": [
         {
-          "qtd_casos": 4,
+          "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.5,
-          "nao_cobertos": [
-            "não é permitido cadastrar um e-mail já utilizado",
-            "o formulário deve ser simples e intuitivo"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.25,
-          "nao_cobertos": [
-            "não é permitido cadastrar um e-mail já utilizado",
-            "a confirmação deve ser igual à senha",
-            "o formulário deve ser simples e intuitivo"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.5,
-          "nao_cobertos": [
-            "não é permitido cadastrar um e-mail já utilizado",
-            "o formulário deve ser simples e intuitivo"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         }
       ],
       "erros": 0
@@ -292,32 +300,22 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.5,
-          "nao_cobertos": [
-            "a confirmação deve ser igual à senha",
-            "o formulário deve ser simples e intuitivo"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.25,
-          "nao_cobertos": [
-            "não é permitido cadastrar um e-mail já utilizado",
-            "a confirmação deve ser igual à senha",
-            "o formulário deve ser simples e intuitivo"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.5,
-          "nao_cobertos": [
-            "a confirmação deve ser igual à senha",
-            "o formulário deve ser simples e intuitivo"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         }
       ],
       "erros": 0
@@ -328,19 +326,15 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "a confirmação deve ser igual à senha"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "a confirmação deve ser igual à senha"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
@@ -364,16 +358,14 @@
           "nao_cobertos": []
         },
         {
-          "qtd_casos": 4,
+          "qtd_casos": 5,
           "formato_ok": true,
-          "tem_negativo": false,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "a busca deve encontrar correspondências parciais no nome"
-          ]
+          "tem_negativo": true,
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
-          "qtd_casos": 4,
+          "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
@@ -392,11 +384,13 @@
           "nao_cobertos": []
         },
         {
-          "qtd_casos": 7,
+          "qtd_casos": 6,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "resultados relevantes devem aparecer primeiro"
+          ]
         },
         {
           "qtd_casos": 6,
@@ -442,26 +436,26 @@
           "qtd_casos": 4,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "uma falha no envio informa o erro sem perder o arquivo selecionado"
-          ]
-        },
-        {
-          "qtd_casos": 4,
-          "formato_ok": true,
-          "tem_negativo": true,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "uma falha no envio informa o erro sem perder o arquivo selecionado"
-          ]
-        },
-        {
-          "qtd_casos": 4,
-          "formato_ok": true,
-          "tem_negativo": true,
           "cobertura": 1.0,
           "nao_cobertos": []
+        },
+        {
+          "qtd_casos": 4,
+          "formato_ok": true,
+          "tem_negativo": true,
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "uma falha no envio informa o erro sem perder o arquivo selecionado"
+          ]
+        },
+        {
+          "qtd_casos": 4,
+          "formato_ok": true,
+          "tem_negativo": true,
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "uma falha no envio informa o erro sem perder o arquivo selecionado"
+          ]
         }
       ],
       "erros": 0
@@ -472,8 +466,10 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "o usuário recebe confirmação após o envio concluído"
+          ]
         },
         {
           "qtd_casos": 5,
@@ -486,8 +482,10 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "o usuário recebe confirmação após o envio concluído"
+          ]
         }
       ],
       "erros": 0
@@ -495,21 +493,21 @@
     "v2": {
       "rodadas": [
         {
-          "qtd_casos": 6,
+          "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
           "nao_cobertos": []
         },
         {
-          "qtd_casos": 6,
+          "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
           "nao_cobertos": []
         },
         {
-          "qtd_casos": 6,
+          "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
@@ -526,10 +524,8 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "o sistema deve detectar tentativas suspeitas"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
@@ -551,14 +547,14 @@
     "atual": {
       "rodadas": [
         {
-          "qtd_casos": 6,
+          "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
           "nao_cobertos": []
         },
         {
-          "qtd_casos": 5,
+          "qtd_casos": 6,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
@@ -577,7 +573,7 @@
     "v2": {
       "rodadas": [
         {
-          "qtd_casos": 5,
+          "qtd_casos": 6,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
@@ -591,11 +587,13 @@
           "nao_cobertos": []
         },
         {
-          "qtd_casos": 5,
+          "qtd_casos": 6,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.5,
+          "nao_cobertos": [
+            "o link de recuperação só pode ser usado uma vez"
+          ]
         }
       ],
       "erros": 0
@@ -617,11 +615,13 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "o cliente pode cancelar até 24 horas antes"
+          ]
         },
         {
-          "qtd_casos": 6,
+          "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
@@ -636,42 +636,8 @@
           "qtd_casos": 6,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "não é possível reservar um horário já ocupado"
-          ]
-        },
-        {
-          "qtd_casos": 5,
-          "formato_ok": true,
-          "tem_negativo": true,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "a reserva deve enviar uma confirmação com data e horário"
-          ]
-        },
-        {
-          "qtd_casos": 6,
-          "formato_ok": true,
-          "tem_negativo": true,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "não é possível reservar um horário já ocupado"
-          ]
-        }
-      ],
-      "erros": 0
-    },
-    "v2": {
-      "rodadas": [
-        {
-          "qtd_casos": 7,
-          "formato_ok": true,
-          "tem_negativo": true,
-          "cobertura": 0.75,
-          "nao_cobertos": [
-            "não é possível reservar um horário já ocupado"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 6,
@@ -686,8 +652,34 @@
           "tem_negativo": true,
           "cobertura": 0.75,
           "nao_cobertos": [
-            "não é possível reservar um horário já ocupado"
+            "a reserva deve enviar uma confirmação com data e horário"
           ]
+        }
+      ],
+      "erros": 0
+    },
+    "v2": {
+      "rodadas": [
+        {
+          "qtd_casos": 6,
+          "formato_ok": true,
+          "tem_negativo": true,
+          "cobertura": 1.0,
+          "nao_cobertos": []
+        },
+        {
+          "qtd_casos": 7,
+          "formato_ok": true,
+          "tem_negativo": true,
+          "cobertura": 1.0,
+          "nao_cobertos": []
+        },
+        {
+          "qtd_casos": 7,
+          "formato_ok": true,
+          "tem_negativo": true,
+          "cobertura": 1.0,
+          "nao_cobertos": []
         }
       ],
       "erros": 0
@@ -697,33 +689,25 @@
     "basico": {
       "rodadas": [
         {
-          "qtd_casos": 4,
-          "formato_ok": true,
-          "tem_negativo": true,
-          "cobertura": 0.0,
-          "nao_cobertos": [
-            "o usuário pode ativar ou desativar notificações por e-mail",
-            "a preferência deve continuar salva após sair e entrar novamente",
-            "notificações obrigatórias de segurança não podem ser desativadas"
-          ]
-        },
-        {
           "qtd_casos": 3,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.6666666666666667,
-          "nao_cobertos": [
-            "a preferência deve continuar salva após sair e entrar novamente"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 4,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.6666666666666667,
-          "nao_cobertos": [
-            "a preferência deve continuar salva após sair e entrar novamente"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
+        },
+        {
+          "qtd_casos": 4,
+          "formato_ok": true,
+          "tem_negativo": true,
+          "cobertura": 1.0,
+          "nao_cobertos": []
         }
       ],
       "erros": 0
@@ -734,28 +718,22 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.6666666666666667,
-          "nao_cobertos": [
-            "a preferência deve continuar salva após sair e entrar novamente"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.6666666666666667,
-          "nao_cobertos": [
-            "a preferência deve continuar salva após sair e entrar novamente"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.6666666666666667,
-          "nao_cobertos": [
-            "a preferência deve continuar salva após sair e entrar novamente"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         }
       ],
       "erros": 0
@@ -766,28 +744,22 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.6666666666666667,
-          "nao_cobertos": [
-            "a preferência deve continuar salva após sair e entrar novamente"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.6666666666666667,
-          "nao_cobertos": [
-            "a preferência deve continuar salva após sair e entrar novamente"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         },
         {
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 0.6666666666666667,
-          "nao_cobertos": [
-            "a preferência deve continuar salva após sair e entrar novamente"
-          ]
+          "cobertura": 1.0,
+          "nao_cobertos": []
         }
       ],
       "erros": 0
@@ -797,7 +769,7 @@
     "basico": {
       "rodadas": [
         {
-          "qtd_casos": 3,
+          "qtd_casos": 4,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
@@ -826,8 +798,10 @@
           "qtd_casos": 5,
           "formato_ok": true,
           "tem_negativo": true,
-          "cobertura": 1.0,
-          "nao_cobertos": []
+          "cobertura": 0.75,
+          "nao_cobertos": [
+            "o total do relatório deve corresponder aos filtros aplicados"
+          ]
         },
         {
           "qtd_casos": 5,
@@ -856,14 +830,14 @@
           "nao_cobertos": []
         },
         {
-          "qtd_casos": 7,
+          "qtd_casos": 6,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,
           "nao_cobertos": []
         },
         {
-          "qtd_casos": 6,
+          "qtd_casos": 7,
           "formato_ok": true,
           "tem_negativo": true,
           "cobertura": 1.0,

@@ -21,7 +21,7 @@ Regras adicionais:
 SYSTEM_BASICO = """Gere casos de teste em Gherkin para a tarefa recebida.
 Responda SOMENTE com JSON neste formato: {"casos": [{"titulo": "...", "tipo": "positivo|negativo|borda", "criterio": "...", "gherkin": "Dado ...\\nQuando ...\\nEntão ..."}]}"""
 
-def gerar_casos(tarefa: str, system: str = SYSTEM) -> list[dict]:
+def gerar_casos(tarefa: str, system: str = SYSTEM_V2) -> list[dict]:
     resp = client.models.generate_content(
         model=MODELO,
         contents=tarefa,
